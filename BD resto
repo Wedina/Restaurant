@@ -1,0 +1,58 @@
+BD resto
+
+
+-->>user:<<--
+
+	id:
+	name:
+	fist-name:
+	born:
+	adress:
+	city:
+	code postal:
+	phone:
+	mail:
+	password:
+	created_at:
+	updated_ad:
+
+
+-->>product:<<--
+
+	id
+	name
+	price ht:
+	taxe:
+	stock:
+	is-Active:
+	img:
+	description
+	created_at:
+	updated_ad:
+
+
+-->>Order:<<--
+	
+	id:
+	user-id:
+	status:
+	created_at:
+
+
+-->>order_line:<<--
+	id:
+	product_id:
+	order_id:
+	price ht
+	tax:
+	quantity:
+
+
+-->>Booking:<<--
+	id
+	created_at:
+	seat_number:
+	booking_date:
+	booking_time:
+	user_id
+
