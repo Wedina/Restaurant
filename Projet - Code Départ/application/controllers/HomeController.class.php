@@ -11,6 +11,11 @@ class HomeController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+        $productModel = new ProductModel();
+
+        $productList = $productModel->getAllProducts();
+
+        return ['products' => $productList];
     }
 
     public function httpPostMethod(Http $http, array $formFields)

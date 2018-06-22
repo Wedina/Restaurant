@@ -1,0 +1,19 @@
+
+
+
+
+<table id="cart">
+<?php foreach ($products as $product): ?>
+
+	<tr >
+		<td><?= $product['name'] ?></td>
+		<td>Qté : <?= $product['quantity'] ?></td>
+		<td><?= Tools::getPrettyPrice(Tools::getPriceTTC($product['priceHT'])) ?></td>
+		<td><?= Tools::getPrettyPrice(Tools::getPriceTTC($product['priceHT'] * $product['quantity'])) ?></td>
+		<td>
+			<button type="button" class="btn-delete" data-id="<?= $product['id'] ?>">Supprimer</button>
+		</td>
+	</tr>
+
+<?php endforeach ?>
+</table>

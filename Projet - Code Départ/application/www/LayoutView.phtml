@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
 
     <!-- Feuilles de styles de l'application -->
+   
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
@@ -29,18 +30,26 @@
             <img src="<?= $wwwUrl ?>/images/logo.gif" height="63" width="57" alt="3WA Restaurant">Restaurant - Made In America !
         </a>
     </h1>
+
+
 </header>
 
 <!-- Interface utilisateur -->
 <nav class="user-interface">
     <ul class="link-list">
-        <!-- Code HTML/PHP à écrire -->
+         <?php if (UserSession::isConnected()): ?>
+        Bonjour, <?= UserSession::getFirstname() ?>
+        <p><a href="<?= $requestUrl ?>/logout">se déconnecter</a></p>
+        <p><a href="<?= $requestUrl ?>/basket">Commander</a></p>
+    <?php else: ?>
+        <a class="btn btn-light" href="<?= $requestUrl ?>/login">Connexion</a>
+    <?php endif ?>
     </ul>
 </nav>
 
 <main>
     <!-- Affichage du template lié à la vue -->
-    <?php include $this->viewData['template'] ?>
+    <?php include $this->viewData['template']; ?>
 </main>
 
 <!-- Pied de page commun -->
@@ -55,6 +64,13 @@
 
 <!-- Code principal JavaScript de l'application -->
 <script src="<?= $wwwUrl ?>/js/main.js"></script>
+
+<div>
+<?php
+Tools::pre($_SESSION);
+?>
+
+</div>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-class ProfilController
+class UserController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -11,10 +11,24 @@ class ProfilController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+           // $userModel = new UserModel();
+          
+            
+           
+
     }
 
     public function httpPostMethod(Http $http, array $formFields)
     {
+            
+            $userModel = new UserModel();
+          
+            $userModel->insert($formFields);
+
+            
+               
+            
+       
     	/*
     	 * Méthode appelée en cas de requête HTTP POST
     	 *

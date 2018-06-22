@@ -1,0 +1,35 @@
+
+
+<form data-order-step="run" id="order-form" class="generic-form ">
+
+   
+    <fieldset>
+        <legend>Ajouter un article</legend>
+            <label for="product">Nom :</label>
+            <select id="product" name="product">
+                <?php foreach($products as $product): ?>
+                    <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+            <hr>
+            <article class="detail_product"  >
+             
+            </article> 
+             <article >
+                <button class="ajouter" type="button">Ajouter</button>
+                <input placeholder="Qté" id="quantity" class="quantity" type="text" maxlength="3" name="quantity" data-name="Quantité" data-type="positive-integer" data-required> <br>
+                <hr>
+            </article>           
+    </fieldset>
+     <fieldset>
+        <legend>Récapitulatif de la commande</legend>
+        <section id="order-summary"></section>
+    </fieldset> 
+</form>
+
+<a href="<?= $requestUrl ?>/">Valider la commande</a>
+<br>
+<br>
+<a href="<?= $requestUrl ?>/user">annuler</a>
+<script src="<?= $wwwUrl ?>/js/basket.js"></script>
+

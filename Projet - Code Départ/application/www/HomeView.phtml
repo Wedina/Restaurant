@@ -2,11 +2,20 @@
 
 <!-- Code HTML à écrire -->
 
+	<a href="<?= $requestUrl ?>/user">créer un compte</a>
+
 
 <!-- Liste des aliments -->
 <table class="generic-table meal-list">
     <caption>Carte du restaurant</caption>
-    <tbody>
-        hello!!
-    </tbody>
+	<?php foreach ($products as $product ): ?>
+	    <tr>
+	    	<td>
+				<img style="width: 200px;" src="<?= $product['img'] ?>">		
+			</td>
+	    	<td><?= $product['name'] ?></td>
+	    	<td><?= $product['priceHT'] ?>$</td>
+			<td><?= $product['description'] ?></td>
+	    </tr>
+	<?php endforeach; ?>
 </table>
